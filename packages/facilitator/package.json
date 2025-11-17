@@ -1,0 +1,45 @@
+{
+  "name": "@q402/facilitator",
+  "version": "0.1.0",
+  "description": "Facilitator service for q402 EIP-7702 delegated payment protocol",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "q402-facilitator": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "lint": "eslint src --ext .ts",
+    "clean": "rm -rf dist *.tsbuildinfo"
+  },
+  "keywords": [
+    "x402",
+    "facilitator",
+    "payments",
+    "eip-7702",
+    "bsc"
+  ],
+  "author": "Quack AI",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@q402/core": "workspace:*",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.15.0",
+    "express": "^4.18.2",
+    "viem": "^2.21.26"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/minimatch": "^6.0.0",
+    "@types/node": "^22.0.0",
+    "tsup": "^8.4.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.7.2"
+  }
+}

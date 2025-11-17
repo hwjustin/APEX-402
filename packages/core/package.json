@@ -1,0 +1,54 @@
+{
+  "name": "@q402/core",
+  "version": "0.1.0",
+  "description": "Core SDK for q402 EIP-7702 delegated payment protocol",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./types": {
+      "import": "./dist/types/index.mjs",
+      "require": "./dist/types/index.js",
+      "types": "./dist/types/index.d.ts"
+    },
+    "./client": {
+      "import": "./dist/client/index.mjs",
+      "require": "./dist/client/index.js",
+      "types": "./dist/client/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "lint": "eslint src --ext .ts",
+    "clean": "rm -rf dist *.tsbuildinfo"
+  },
+  "keywords": [
+    "x402",
+    "eip-7702",
+    "bsc",
+    "payments",
+    "crypto",
+    "ethereum"
+  ],
+  "author": "Quack AI",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@scure/base": "^1.2.6",
+    "viem": "^2.21.26",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.18.13",
+    "tsup": "^8.4.0",
+    "typescript": "^5.7.2"
+  }
+}

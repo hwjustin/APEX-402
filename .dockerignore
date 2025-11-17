@@ -1,0 +1,55 @@
+# Node
+node_modules
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# Build outputs
+dist
+build
+*.tsbuildinfo
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Git
+.git
+.gitignore
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# Logs
+logs
+*.log
+
+# Test
+coverage
+.nyc_output
+
+# Temporary
+tmp
+temp
+*.tmp
+
+# Documentation
+docs/*.md
+*.md
+!README.md
+
+# Examples (if not needed)
+examples/
+x402/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+

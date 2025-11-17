@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "composite": false,
+    "incremental": false,
+    "skipLibCheck": true,
+    "types": [],
+    "paths": {
+      "@q402/core": ["../core/src/index.ts"],
+      "@q402/core/*": ["../core/src/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "**/*.test.ts"]
+}
+
