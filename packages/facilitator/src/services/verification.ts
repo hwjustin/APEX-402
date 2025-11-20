@@ -259,7 +259,7 @@ async function verifyEIP7702Authorization(
 ): Promise<boolean> {
   try {
     const viem = await import('viem');
-    const { recoverAddress, keccak256, toRlp, toHex, concat, hexToBytes } = viem;
+    const { recoverAddress, recoverMessageAddress, keccak256, toRlp, toHex, concat, hexToBytes } = viem;
     
     const { chainId, address, nonce, yParity, r, s } = authorization;
     
@@ -282,19 +282,22 @@ async function verifyEIP7702Authorization(
     const MAGIC = '0x05';
     
     // Use toRlp instead of encodeRlp
+    const chainIdBig = BigInt(chainId);
+    const nonceBig = BigInt(nonce);
+
     const rlpData = toRlp([
-      toHex(chainId),
+      chainIdBig === 0n ? "0x" : `0x${chainIdBig.toString(16)}`,
       address.toLowerCase(),
-      toHex(nonce),
+      nonceBig === 0n ? "0x" : `0x${nonceBig.toString(16)}`,
     ]);
-    
+
     // Concatenate MAGIC and RLP data
     const authHash = keccak256(concat([MAGIC as any, rlpData]));
     console.log(`   Authorization hash: ${authHash.slice(0, 20)}...`);
     
     // 3. Recover signer from signature
-    const recoveredAddress = await recoverAddress({
-      hash: authHash,
+    const recoveredAddress = await recoverMessageAddress({
+      message: { raw: authHash },
       signature: { r: r as any, s: s as any, yParity },
     });
     

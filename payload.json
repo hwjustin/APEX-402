@@ -1,0 +1,74 @@
+{
+  "witnessSignature": "0x8d614436e498de48bd86cc1e624c604614c124d91cbd421afe134dcbf07474b7474b907390789b3a307930a89967f7f6a3234dbb97c8068e943de3188bbca4a11b",
+  "authorization": {
+    "chainId": 97,
+    "address": "0x8aB283419554Fa7f7B332118F1815829B5C353DE",
+    "nonce": 0,
+    "yParity": 1,
+    "r": "0xd437444c732b9b564c37a044b399ba4a10080ccd3f135cced1309e3e193e809f",
+    "s": "0x14194d6845e855cfcf90ae91f45938e247c39a2074ebc401cd3b9fa92fd5c9b9"
+  },
+  "paymentDetails": {
+    "scheme": "evm/eip7702-delegated-payment",
+    "networkId": "bsc-testnet",
+    "token": "0x337610d27c682e347c9cd60bd4b3b107c9d34ddd",
+    "amount": "1000000000000000000",
+    "to": "0x073C02ff48F6E81E6eFeE81B2a826B811bEaC855",
+    "implementationContract": "0x8aB283419554Fa7f7B332118F1815829B5C353DE",
+    "witness": {
+      "domain": {
+        "name": "q402",
+        "version": "1",
+        "chainId": 97,
+        "verifyingContract": "0x8aB283419554Fa7f7B332118F1815829B5C353DE"
+      },
+      "types": {
+        "Witness": [
+          {
+            "name": "owner",
+            "type": "address"
+          },
+          {
+            "name": "token",
+            "type": "address"
+          },
+          {
+            "name": "amount",
+            "type": "uint256"
+          },
+          {
+            "name": "to",
+            "type": "address"
+          },
+          {
+            "name": "deadline",
+            "type": "uint256"
+          },
+          {
+            "name": "paymentId",
+            "type": "bytes32"
+          },
+          {
+            "name": "nonce",
+            "type": "uint256"
+          }
+        ]
+      },
+      "primaryType": "Witness",
+      "message": {
+        "owner": "0x268DE765aeC0799CEAE45012F4C73f823d146c21",
+        "token": "0x337610d27c682e347c9cd60bd4b3b107c9d34ddd",
+        "amount": "1000000000000000000",
+        "to": "0x073C02ff48F6E81E6eFeE81B2a826B811bEaC855",
+        "deadline": "1763679619",
+        "paymentId": "0xf51483e5e268daee748fbf22a268cff07c23a74f0ee6ca2e7b46c39d78021eef",
+        "nonce": "84850452700732192868067139749233199848338282038485224618852197379620804656157"
+      }
+    },
+    "authorization": {
+      "chainId": 97,
+      "address": "0x8aB283419554Fa7f7B332118F1815829B5C353DE",
+      "nonce": 0
+    }
+  }
+}
