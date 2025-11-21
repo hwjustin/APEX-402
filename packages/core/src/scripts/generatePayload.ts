@@ -35,7 +35,25 @@ async function main() {
   console.log(
     JSON.stringify(
       payload,
-      (_key, value) => (typeof value === "bigint" ? value.toString() : value),
+      (key, value) => {
+        if (typeof value === "bigint") {
+          if (key === "chainId" || key === "nonce") {
+            const asNumber = Number(value);
+
+            // Ensure we don't silently lose precision
+            if (!Number.isSafeInteger(asNumber)) {
+              throw new Error(`Cannot safely convert bigint ${key}=${value.toString()} to number`);
+            }
+
+            return asNumber;
+          }
+
+          // Default: keep other bigint values as strings
+          return value.toString();
+        }
+
+        return value;
+      },
       2,
     ),
   );
